@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc95e16037e0c64459aaaffe9ff57115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1598268250230127385}
+  playerBaseManager: {fileID: 1598268250230127385}
   workerPrefab: {fileID: 3997852914558251547, guid: cb27563be3bbf464396176a159b86d82, type: 3}
   spawnPoint: {fileID: 1598268248566572896}
 --- !u!114 &2453335177877987927
