@@ -1,20 +1,21 @@
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace HappyHour.Concretes.Controllers
 {
     public class PlayerBaseController : MonoBehaviourPunCallbacks,IPunObservable
     {
-        [Header("Dependencies")]
-        public PlayerController playerController;
+        [FormerlySerializedAs("playerController")] [Header("Dependencies")]
+        public PlayerBaseManager playerBaseManager;
         public GameObject workerPrefab;
         public Transform spawnPoint;
         private void Awake()
         {
             if (!photonView.IsMine)
             {
-                playerController.enabled = false;
+                playerBaseManager.enabled = false;
             }
         }
         
@@ -36,7 +37,7 @@ namespace HappyHour.Concretes.Controllers
             if (workerController)
             {
                 workerController.SetBasePosition(transform);
-                workerController._nameText.text = GetComponent<PlayerController>().CurrentPlayerData.playerStats.playerName;
+                workerController._nameText.text = GetComponent<PlayerBaseManager>().CurrentPlayerData.playerStats.playerName;
                 workerController._nameText.color = Color.green;
             }
         }

@@ -102,7 +102,7 @@ namespace HappyHour.Concretes.Controllers
         {
             if (photonView.IsMine)
             {
-                if (other.TryGetComponent<PlayerController>(out PlayerController playerController))
+                if (other.TryGetComponent<PlayerBaseManager>(out PlayerBaseManager playerController))
                 {
                     playerController.CurrentPlayerData.playerInventory.AddWood(CurrentCarryAmount);
                     int progress = playerController.CurrentPlayerData.playerInventory.wood;

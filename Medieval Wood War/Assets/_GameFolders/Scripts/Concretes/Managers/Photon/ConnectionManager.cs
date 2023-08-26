@@ -36,7 +36,7 @@ namespace HappyHour.Concretes.Managers
                 
                 if (playerInstance.GetComponent<PhotonView>().IsMine)
                 {
-                    playerInstance.GetComponent<PlayerController>().enabled = true;
+                    playerInstance.GetComponent<PlayerBaseManager>().enabled = true;
                     Camera playerCamera = _playerCamera.GetComponent<Camera>();
                     GameObject inputManagerInstance = PhotonNetwork.Instantiate(_InputManager.name, Vector3.zero, Quaternion.identity);
                     Camera.main.transform.position = selectedSpawnPoint.transform.position;
@@ -51,7 +51,7 @@ namespace HappyHour.Concretes.Managers
                 
                 if (playerInstance.GetComponent<PhotonView>().IsMine)
                 {
-                    playerInstance.GetComponent<PlayerController>().enabled = true;
+                    playerInstance.GetComponent<PlayerBaseManager>().enabled = true;
                     Camera playerCamera = _playerCamera.GetComponent<Camera>();
                     GameObject inputManagerInstance = PhotonNetwork.Instantiate("InputManager", Vector3.zero, Quaternion.identity);
                     PlayerInputController inputController = inputManagerInstance.GetComponent<PlayerInputController>();

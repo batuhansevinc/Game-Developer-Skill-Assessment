@@ -3,7 +3,7 @@ using Photon.Pun;
 
 namespace HappyHour.Concretes.Controllers
 {
-    public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable
+    public class PlayerBaseManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         public PlayerData basePlayerData;
         public PlayerBase basePlayerBase;
